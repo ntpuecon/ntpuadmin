@@ -18,7 +18,7 @@ attachMenuSubitems <- function(sea,
   sea$成績相關[[submenuItemName]] <- function(){
     sea$session$executeScript(
       glue::glue(htmltools::includeHTML(
-        "assets/js/menuselect3.js"),
+        system.file("extdata/js/menuselect3.js", package="ntpuadmin")),
         .open = "<<", .close=">>"
     ))
   }
@@ -28,7 +28,7 @@ attachMenuItems <- function(sea){
   sea$成績相關 <- function(){
     sea$session$executeScript(
       htmltools::includeHTML(
-        "assets/js/menuselect2.js")
+        system.file("extdata/js/menuselect2.js", package="ntpuadmin"))
     )
     submenuItemNames=c(
       '成績登錄系統'
@@ -43,7 +43,7 @@ attachOtherMethods <- function(sea){
   sea$教師功能 <- function(){
     sea$session$executeScript(
       htmltools::includeHTML(
-        "assets/js/menuselect1.js")
+        system.file("extdata/js/menuselect1.js", package="ntpuadmin"))
     )
     attachMenuItems(sea)
   }
